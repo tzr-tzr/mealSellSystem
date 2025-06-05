@@ -3,6 +3,7 @@ package com.sky.service.impl;
 import com.sky.constant.MessageConstant;
 import com.sky.constant.PasswordConstant;
 import com.sky.constant.StatusConstant;
+import com.sky.context.BaseContext;
 import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
 import com.sky.entity.Employee;
@@ -66,6 +67,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param employeeDTO
      */
     public void save(EmployeeDTO employeeDTO) {
+        System.out.println("当前线程的id"+Thread.currentThread().getId());
         //调用持有层mapper把数据插入，dto转成实体类里实体
         Employee employee=new Employee();
         //设置属性值，对象属性拷贝简化代码量
@@ -81,9 +83,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setUpdateTime(LocalDateTime.now());
         //TODO后期改 为当前登录用户的Id,动态获取
         //设置当前记录创建人id
-        employee.setCreateUser(10L);
+        employee.setCreateUser(BaseContext.getCurrentId());//从线程存储空间中取出
         //设置当前记录修改人id
-        employee.setUpdateUser(10L);
+        employee.setUpdateUser(BaseContext.getCurrentId());
         //调用持久层mapper把数据插入
         employeeMapper.insert(employee);
 

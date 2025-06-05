@@ -92,6 +92,7 @@ public class EmployeeController {
      @ApiOperation("新增员工")//swagger方法注解
     public Result save(@RequestBody EmployeeDTO employeeDTO){
     log.info("新增员工：{}",employeeDTO);//{}为占位符，后面参数动态拼接
+         System.out.println("当前线程的id"+Thread.currentThread().getId());
     employeeService.save(employeeDTO);
     return Result.success();
     }
