@@ -130,6 +130,32 @@ public class EmployeeController {
     return Result.success();
     }
 
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    //泛型，告诉前端返回的具体是个怎样的数据，Employee实体对象
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询员工信息")
+    public Result<Employee>getById(@PathVariable Long id){
+        Employee employee=  employeeService.getById(id);
 
+
+        return Result.success(employee);
+    }
+    /**
+     * 编辑员工信息
+     * @param employeeDTO
+     * @return
+     */
+    @PutMapping
+    @ApiOperation("编辑员工信息")
+    public Result update(@RequestBody EmployeeDTO employeeDTO){//json格式，加注解
+        log.info("编辑员工信息：{}",employeeDTO);
+        employeeService.update(employeeDTO);
+
+        return Result.success();
+    }
 
 }

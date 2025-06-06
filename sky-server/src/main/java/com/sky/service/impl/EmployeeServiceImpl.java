@@ -133,4 +133,33 @@ Employee employee= Employee.builder()
        employeeMapper.update(employee);
     }
 
+
+    /**
+     * 根据Id查询员工
+     * @param id
+     * @return
+     */
+    public Employee getById(Long id) {
+        Employee employee=  employeeMapper.getById(id);
+        employee.setPassword("****");//真密码别传到前端
+        return employee;
+    }
+
+    /**
+     * 编辑员工信息
+     * @param employeeDTO
+     * @return
+     */
+    public void update(EmployeeDTO employeeDTO) {
+    //dto转employee，属性拷贝，服用已经实现好的update mapper
+        Employee employee= new Employee();
+        BeanUtils.copyProperties(employeeDTO,employee);//属性拷贝
+        employee.setUpdateTime(LocalDateTime.now());//当前时间
+        employee.setUpdateUser(BaseContext.getCurrentId());//实现是用那个线程，获得修改人的Id
+        employeeMapper.update(employee);//因为update实现的是Employee,EmployeeDTO含于Employee
+
+
+    }
+
+
 }

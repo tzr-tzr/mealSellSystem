@@ -47,4 +47,12 @@ public interface EmployeeMapper {
 用方法二，mapper映射文件编写
  */
     void update(Employee employee);
+
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    @Select("select * from employee where id=#{id}")
+    Employee getById(Long id);
 }
