@@ -84,13 +84,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         //设置密码，默认密码123456
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));//密码转MD5
         //设置当前记录的创建时间和修改时间
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setCreateTime(LocalDateTime.now());//已经用公共字段填充，切面增强功能，不需要再赋值
+//        employee.setUpdateTime(LocalDateTime.now());
         //TODO后期改 为当前登录用户的Id,动态获取
         //设置当前记录创建人id
-        employee.setCreateUser(BaseContext.getCurrentId());//从线程存储空间中取出
+//        employee.setCreateUser(BaseContext.getCurrentId());//从线程存储空间中取出
         //设置当前记录修改人id
-        employee.setUpdateUser(BaseContext.getCurrentId());
+//        employee.setUpdateUser(BaseContext.getCurrentId());
         //调用持久层mapper把数据插入
         employeeMapper.insert(employee);
 
@@ -154,8 +154,8 @@ Employee employee= Employee.builder()
     //dto转employee，属性拷贝，服用已经实现好的update mapper
         Employee employee= new Employee();
         BeanUtils.copyProperties(employeeDTO,employee);//属性拷贝
-        employee.setUpdateTime(LocalDateTime.now());//当前时间
-        employee.setUpdateUser(BaseContext.getCurrentId());//实现是用那个线程，获得修改人的Id
+//        employee.setUpdateTime(LocalDateTime.now());//当前时间
+//        employee.setUpdateUser(BaseContext.getCurrentId());//实现是用那个线程，获得修改人的Id
         employeeMapper.update(employee);//因为update实现的是Employee,EmployeeDTO含于Employee
 
 
