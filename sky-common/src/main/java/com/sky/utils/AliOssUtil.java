@@ -12,7 +12,7 @@ import java.io.ByteArrayInputStream;
 @Data
 @AllArgsConstructor
 @Slf4j
-public class AliOssUtil {
+public class AliOssUtil {//文件上传调用工具类
 
     private String endpoint;
     private String accessKeyId;
