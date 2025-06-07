@@ -5,7 +5,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "sky.alioss")
+@ConfigurationProperties(prefix = "sky.alioss")//配置属性类，读取配置文件的配置项，封装成java对象，
+//springboot框架能自动转换，名称
 @Data
 public class AliOssProperties {
 
