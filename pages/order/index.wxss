@@ -235,7 +235,7 @@
 }
 .order_content .new_address .address_image text.data-v-0ca91b30 {
   font-size: 24rpx;
-  color: #f58c21;
+  color: #3971eb;
 }
 .order_content .new_address .address_image .to_right.data-v-0ca91b30 {
   width: 32rpx;

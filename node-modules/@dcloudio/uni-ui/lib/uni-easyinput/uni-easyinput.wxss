@@ -108,7 +108,7 @@
   border-color: #e43d33;
 }
 .is-input-error-border .uni-easyinput__placeholder-class {
-  color: #f29e99;
+  color: #3971eb;
 }
 .uni-easyinput--border {
   margin-bottom: 0;

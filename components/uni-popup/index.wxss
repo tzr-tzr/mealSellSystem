@@ -86,7 +86,7 @@
   color: #3971eb;
 }
 .error-text {
-  color: #f56c6c;
+  color: #3971eb;
 }
 .info-text {
   color: #909399;

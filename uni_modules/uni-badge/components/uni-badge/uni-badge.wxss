@@ -65,7 +65,7 @@
   background-color: #4cd964;
 }
 .uni-badge--warning {
-  background-color: #f0ad4e;
+  background-color: #3971eb;
 }
 .uni-badge--error {
   background-color: #dd524d;
@@ -87,7 +87,7 @@
   background-color: transparent;
 }
 .uni-badge--warning-inverted {
-  color: #f0ad4e;
+  color: #3971eb;
   background-color: transparent;
 }
 .uni-badge--error-inverted {

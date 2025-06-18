@@ -108,7 +108,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 .infoTip {
-  color: #f58c21;
+  color: #3971eb;
 }
 .order_content {
   height: calc(100vh - 20rpx);
