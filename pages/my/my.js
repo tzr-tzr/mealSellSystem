@@ -336,7 +336,7 @@ var _index = __webpack_require__(/*! @/utils/index.js */ 29);function _interopRe
   },
   methods: _objectSpread(_objectSpread({},
   (0, _vuex.mapMutations)(['setAddressBackUrl'])), {}, {
-    // <!-- 1待付款 2待接单 3 已接单 4 派送中 5 已完成 6 已取消 7 退款 -->
+    // <!-- 1待付款 2待接单 3 已接单 4 完成中 5 已完成 6 已取消 7 退款 -->
     numes: function numes(list) {
       var count = 0;
       var total = 0;

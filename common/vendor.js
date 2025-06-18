@@ -21140,9 +21140,9 @@ exports.getLableVal = getLableVal;var statusWord = function statusWord(status, t
     case 2:
       return '待接单';
     case 3:
-      return '待派送';
+      return '待完成';
     case 4:
-      return '派送中';
+      return '完成中';
     case 5:
       return '已完成';
     case 7:
@@ -21870,7 +21870,7 @@ var _default = {
 
       activeRadio: '无需餐具', //存的是选中的value值
       radioGroup: ['依据餐量提供', '无需餐具'],
-      popright: ['立即派送', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00',
+      popright: ['立即完成', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00',
       '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30',
       '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00'],
 
@@ -22021,7 +22021,7 @@ var _default = {
         });
         // this.newDateData.shift() 
         this.newDateData.splice(0, 2);
-        this.newDateData.unshift('立即派送');
+        this.newDateData.unshift('立即完成');
       }
 
     },
@@ -22109,9 +22109,9 @@ var _default = {
         payMethod: 1,
         addressBookId: this.addressBookId,
         remark: this.remark,
-        estimatedDeliveryTime: this.arrivalTime === '立即派送' ? (0, _index.presentFormat)() : (0, _index.dateFormat)(this.isTomorrow,
+        estimatedDeliveryTime: this.arrivalTime === '立即完成' ? (0, _index.presentFormat)() : (0, _index.dateFormat)(this.isTomorrow,
         this.arrivalTime),
-        deliveryStatus: this.arrivalTime === '立即派送' ? 1 : 0 }, _defineProperty(_params, "remark",
+        deliveryStatus: this.arrivalTime === '立即完成' ? 1 : 0 }, _defineProperty(_params, "remark",
       this.remark), _defineProperty(_params, "tablewareStatus",
       this.status), _defineProperty(_params, "tablewareNumber",
       this.num), _defineProperty(_params, "packAmount",
@@ -22270,7 +22270,7 @@ var _default = {
       this.setTime(val);
     },
     setTime: function setTime(val) {
-      if (val === '立即派送') {
+      if (val === '立即完成') {
         this.getHarfAnOur();
       } else {
         this.arrivalTime = val;
@@ -28592,7 +28592,7 @@ var _default = {
         case 3:
           return '商家已接单';
         case 4:
-          return '订单派送中';
+          return '订单完成中';
         case 5:
           return '订单已完成';}
 
